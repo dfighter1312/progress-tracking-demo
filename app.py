@@ -195,9 +195,9 @@ def calculate_sentence_similarity(sentence1, sentence2):
 def engagement_analysis(conversation):
     print("Calculating engagement score...")
     engagement_pts_list = []
-    for i in tqdm(range(1, len(conversation), 2)):
-        user_prompt = conversation[i + 1]["content"]
-        assistant_prompt = conversation[i]["content"]
+    for i in tqdm(range(2, len(conversation), 2)):
+        user_prompt = conversation[i]["content"]
+        assistant_prompt = conversation[i-1]["content"]
         engagement_pts = calculate_sentence_similarity(user_prompt, assistant_prompt)
         engagement_pts_list.append(engagement_pts)
     return np.mean(np.array(engagement_pts_list)) * 100
