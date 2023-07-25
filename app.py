@@ -11,6 +11,7 @@ import uuid
 import json
 import plotly.express as px
 import streamlit_authenticator as stauth
+import jdk
 
 import pandas as pd
 
@@ -55,6 +56,7 @@ pp = pprint.PrettyPrinter(indent=4)
 
 @st.cache_resource
 def init():
+    jdk.install('11')
     spacy.cli.download("en_core_web_sm")
 
 
