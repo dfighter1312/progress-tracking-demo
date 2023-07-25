@@ -56,7 +56,6 @@ pp = pprint.PrettyPrinter(indent=4)
 
 @st.cache_resource
 def init():
-    jdk.install('11')
     spacy.cli.download("en_core_web_sm")
 
 
