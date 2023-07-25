@@ -348,7 +348,6 @@ if authentication_status:
         
         # Change the session_id
         st.session_state["session_id"] = uuid.uuid4()
-        chat_history = []
         
     st.subheader("Conversation:")
     if len(chat_history) == 0:
