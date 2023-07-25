@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    filip:
+      email: filip@flipjungle.com
+      name: Filip
+      password: $2b$12$repYk4PvSxY5Q1.48WxtVeb8HrCLgbgeeaRoM5ln1IlfEum.wDOGS # To be replaced with hashed password
+    test:
+      email: test@flipjungle.com
+      name: Test
+      password: $2b$12$repYk4PvSxY5Q1.48WxtVeb8HrCLgbgeeaRoM5ln1IlfEum.wDOGS # To be replaced with hashed password
+cookie:
+  expiry_days: 30
+  key: random_signature_key # Must be string
+  name: random_cookie_name
+preauthorized:
+  emails:
+  - test@flipjungle.com
