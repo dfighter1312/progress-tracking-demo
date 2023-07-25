@@ -53,6 +53,11 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 pp = pprint.PrettyPrinter(indent=4)
 
 
+@st.cache_resource
+def init():
+    spacy.cli.download("en_core_web_sm")
+
+
 @st.cache_data
 def load_skill_description():
     with open("skill_explanation.md", 'r') as f:
@@ -245,6 +250,7 @@ def clear_text():
 
 
 if authentication_status:
+    init()
     authenticator.logout('Logout', 'main')
     
     st.title("Testing the Progress Tracking method - Version 0.1.0")
